@@ -2,11 +2,11 @@ sudo: required
 services:
   - docker
 
-# befor_install:
-#   - docker build -t icoder/react-test -f ./client/Dockerfile.dev ./client/
+before_install:
+  - docker build -t icoder/react-test -f ./client/Dockerfile.dev ./client/
 
-# script:
-#   - docker run -e CI=true icoder/react-test npm run test
+script:
+  - docker run -e CI=true icoder/react-test npm run test
 
 after_success:
   - docker build -t icoder/multi-client ./client
@@ -17,7 +17,7 @@ after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
   # Take those images and push to docker hub
-  # comment
+  #
   - docker push icoder/multi-client
   - docker push icoder/multi-nginx
   - docker push icoder/multi-server
