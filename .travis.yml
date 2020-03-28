@@ -17,6 +17,7 @@ after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
   # Take those images and push to docker hub
+  # comment
   - docker push icoder/multi-client
   - docker push icoder/multi-nginx
   - docker push icoder/multi-server
