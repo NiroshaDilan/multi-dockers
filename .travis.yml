@@ -9,16 +9,16 @@ script:
   - docker run -e CI=true icoder/react-test npm run test
 
 after_success:
-  - docker build -t multi-client ./client
-  - docker build -t multi-nginx ./nginx
-  - docker build -t multi-server ./server
-  - docker build -t multi-worker ./worker
+  - docker build -t dilanfernando/multi-client ./client
+  - docker build -t dilanfernando/multi-nginx ./nginx
+  - docker build -t dilanfernando/multi-server ./server
+  - docker build -t dilanfernando/multi-worker ./worker
   # Log in to the docker cli
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
   # Take those images and push to docker hub
   #
-  - docker push dilanfernando/icoder/multi-client:latest
-  - docker push dilanfernando/icoder/multi-nginx:latest
-  - docker push dilanfernando/icoder/multi-server:latest
-  - docker push dilanfernando/icoder/multi-worker:latest
+  - docker push dilanfernando/multi-client:latest
+  - docker push dilanfernando/multi-nginx:latest
+  - docker push dilanfernando/multi-server:latest
+  - docker push dilanfernando/multi-worker:latest
