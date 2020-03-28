@@ -18,7 +18,7 @@ after_success:
 
   # Take those images and push to docker hub
   #
-  - docker push dilanfernando/multi-client:latest
-  - docker push dilanfernando/multi-nginx:latest
-  - docker push dilanfernando/multi-server:latest
-  - docker push dilanfernando/multi-worker:latest
+  - docker push dilanfernando/icoder/multi-client:latest
+  - docker push dilanfernando/icoder/multi-nginx:latest
+  - docker push dilanfernando/icoder/multi-server:latest
+  - docker push dilanfernando/icoder/multi-worker:latest
