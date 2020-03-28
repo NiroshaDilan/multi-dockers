@@ -18,7 +18,7 @@ after_success:
 
   # Take those images and push to docker hub
   #
-  - docker push icoder/multi-client
-  - docker push icoder/multi-nginx
-  - docker push icoder/multi-server
-  - docker push icoder/multi-worker
+  - docker push icoder/multi-client:latest
+  - docker push icoder/multi-nginx:latest
+  - docker push icoder/multi-server:latest
+  - docker push icoder/multi-worker:latest
